@@ -549,36 +549,114 @@
 
 
  // Direct CV Download from GitHub
-        document.getElementById('downloadBtn').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Replace with your GitHub raw file URL
-            const cvUrl = 'https://raw.githubusercontent.com/yourusername/yourrepo/main/cv.pdf';
-            
-            // Create download link
+       // GitHub Pages optimized PDF download
+document.getElementById('downloadBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // GitHub Pages PDF paths - choose the one that matches your setup
+    const pdfPath = './cv.pdf'; // If PDF is in root of your repository
+    // const pdfPath = './documents/cv.pdf'; // If PDF is in documents folder
+    // const pdfPath = './assets/cv.pdf'; // If PDF is in assets folder
+    
+    downloadPDFFromGitHub(pdfPath);
+});
+
+function downloadPDFFromGitHub(pdfPath) {
+    // Add loading state
+    const downloadBtn = document.getElementById('downloadBtn');
+    const originalContent = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+    downloadBtn.style.pointerEvents = 'none';
+    
+    // Method 1: Try direct download first (works most of the time on GitHub Pages)
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'Lasintha_Erandika_CV.pdf';
+    link.target = '_blank'; // Fallback to open in new tab
+    
+    // Test if file exists first
+    fetch(pdfPath, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                // File exists, proceed with download
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showSuccessMessage('CV Download Started!');
+            } else {
+                throw new Error('PDF file not found');
+            }
+        })
+        .catch(error => {
+            console.log('Direct download failed, trying fetch method...');
+            // Fallback: Use fetch method
+            downloadWithFetch(pdfPath);
+        })
+        .finally(() => {
+            // Restore button after a delay
+            setTimeout(() => {
+                downloadBtn.innerHTML = originalContent;
+                downloadBtn.style.pointerEvents = 'auto';
+            }, 2000);
+        });
+}
+
+function downloadWithFetch(pdfPath) {
+    fetch(pdfPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
-            link.href = cvUrl;
-            link.download = 'CV.pdf'; // Filename for download
-            link.style.display = 'none';
+            link.href = url;
+            link.download = 'Lasintha_Erandika_CV.pdf';
             
-            // Add to page, click, and remove
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             
-            // Show success message
-            showSuccessMessage('CV Download Started!');
-        });
-        
-        function showSuccessMessage(message) {
-            const successMsg = document.getElementById('successMessage');
-            successMsg.textContent = message;
-            successMsg.classList.add('show');
+            // Clean up
+            window.URL.revokeObjectURL(url);
+            showSuccessMessage('CV Downloaded Successfully!');
+        })
+        .catch(error => {
+            console.error('Download failed:', error);
+            showSuccessMessage('PDF file not found. Please check the file path.', 'error');
             
-            setTimeout(() => {
-                successMsg.classList.remove('show');
-            }, 2000);
-        }
+            // Fallback: Try to open PDF in new tab
+            window.open(pdfPath, '_blank');
+        });
+}
+
+function showSuccessMessage(message, type = 'success') {
+    const successMsg = document.getElementById('successMessage');
+    
+    if (type === 'error') {
+        successMsg.style.background = 'rgba(255, 0, 0, 0.9)';
+        successMsg.textContent = '⚠️ ' + message;
+    } else {
+        successMsg.style.background = 'rgba(0, 255, 0, 0.9)';
+        successMsg.textContent = '✅ ' + message;
+    }
+    
+    successMsg.classList.add('show');
+    
+    setTimeout(() => {
+        successMsg.classList.remove('show');
+    }, 3000);
+}
+
+// Add click animation
+document.getElementById('downloadBtn').addEventListener('click', function() {
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = 'scale(1)';
+    }, 150);
+});
 </script>
 
 </body>
