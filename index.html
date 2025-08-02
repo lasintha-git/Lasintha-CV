@@ -141,8 +141,10 @@
                         SCIENCE FOR TECHNOLOGY --------------------- B
                         </p>
                     </div>
-    
-                    <button class="nav-btn 2">DOWNLOAD PDF</button>
+                    
+                    <a href="#" id="downloadRBtn">
+                        <button class="nav-btn 2">DOWNLOAD PDF</button>
+                    </a>
                 </div>
 
 
@@ -673,14 +675,121 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
     }, 150);
 });
 
-
+document.getElementById('downloadRBtn').addEventListener('click', function(e) {
+    e.preventDefault();
     
+    const pdfPath = './lasintha.pdf'; // Update this path to your PDF location
+    downloadPDF(pdfPath);
+});
+
+function downloadPDF(pdfPath) {
+    // Method 1: Direct download
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'Lasintha_Erandika_CV.pdf';
+    link.target = '_blank';
+    
+    // Test if file exists
+    fetch(pdfPath, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                // File exists, download it
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                // Fallback: Use fetch method
+                downloadWithFetch(pdfPath);
+            }
+        })
+        .catch(error => {
+            // Fallback: Use fetch method
+            downloadWithFetch(pdfPath);
+        });
+}
+
+function downloadWithFetch(pdfPath) {
+    fetch(pdfPath)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Lasintha_Erandika_CV.pdf';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+            // Final fallback: Open in new tab
+            window.open(pdfPath, '_blank');
+        });
+}
+ 
+
+document.getElementById('downloadRBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const pdfPath = './Exam Results.pdf'; // Update this path to your PDF location
+    downloadPDF(pdfPath);
+});
+
+function downloadPDF(pdfPath) {
+    // Method 1: Direct download
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'Exam Results.pdf';
+    link.target = '_blank';
+    
+    // Test if file exists
+    fetch(pdfPath, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                // File exists, download it
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                // Fallback: Use fetch method
+                downloadWithFetch(pdfPath);
+            }
+        })
+        .catch(error => {
+            // Fallback: Use fetch method
+            downloadWithFetch(pdfPath);
+        });
+}
+
+function downloadWithFetch(pdfPath) {
+    fetch(pdfPath)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Exam Results.pdf';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+            // Final fallback: Open in new tab
+            window.open(pdfPath, '_blank');
+        });
+}
 
 </script>
 
 </body>
 </html>
-
 
 
 
