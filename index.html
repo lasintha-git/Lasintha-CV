@@ -674,38 +674,13 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
 });
 
 
-
-
-
-    document.getElementById('downloadResult').addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    // GitHub Pages PDF paths - choose the one that matches your setup
-    const pdfPath = './Exam Results .pdf'; // If PDF is in root of your repository
-    // const pdfPath = './documents/cv.pdf'; // If PDF is in documents folder
-    // const pdfPath = './assets/cv.pdf'; // If PDF is in assets folder
-    
-    downloadPDFFromGitHub(pdfPath);
-});
-
-function downloadPDFFromGitHub(pdfPath) {
-    // Add loading state
-    const downloadBtn = document.getElementById('downloadBtn');
-    const originalContent = downloadBtn.innerHTML;
-    downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
-    downloadBtn.style.pointerEvents = 'none';
-    
-    // Method 1: Try direct download first (works most of the time on GitHub Pages)
-    const link = document.createElement('a');
-    link.href = pdfPath;
-    link.download = 'Lasintha_Erandika_result.pdf';
-    link.target = '_blank'; // Fallback to open in new tab
     
 
 </script>
 
 </body>
 </html>
+
 
 
 
