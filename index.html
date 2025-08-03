@@ -735,10 +735,31 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
         this.style.transform = 'scale(1)';
     }, 150);
 });
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, observerOptions);
+
+// Observe elements on mobile devices
+if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    document.querySelectorAll('.project-card, .certificate-card, .badge-wrapper, .timeline-item').forEach(el => {
+        observer.observe(el);
+    });
+}
 </script>
 
 </body>
 </html>
+
 
 
 
