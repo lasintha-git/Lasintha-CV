@@ -422,10 +422,14 @@ p{
     overflow: hidden;
     border-radius: 30px;
 }
-.badgex{
-    display: inline-flex;
-    gap: 30px;
-    
+.badgex {
+    display: flex; /* Changed from inline-flex */
+    justify-content: center; /* Center the badges horizontally */
+    align-items: center; /* Center vertically if needed */
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin: 0 auto; /* Additional centering for the container */
+    width: 100%; /* Ensure it takes full width of parent */
 }
 .badge-img {
     width: 180px;
@@ -840,7 +844,12 @@ p{
             .section-title {
                 font-size: 1.8rem;
             }
-
+            .timeline::before {
+                left: 11px;
+            }
+            .timeline-item::before {
+                left: 3px;
+            }
             .glass-btn {
                 padding: 14px 25px;
                 font-size: 0.9rem;
@@ -2019,4 +2028,3 @@ p{
         font-size: 0.4rem;
     }
 }
-
