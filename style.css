@@ -422,7 +422,11 @@ p{
     overflow: hidden;
     border-radius: 30px;
 }
-
+.badgex{
+    display: inline-flex;
+    gap: 30px;
+    
+}
 .badge-img {
     width: 180px;
     border-radius: 20px;
@@ -2015,3 +2019,4 @@ p{
         font-size: 0.4rem;
     }
 }
+
