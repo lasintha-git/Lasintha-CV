@@ -755,10 +755,79 @@ if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
         observer.observe(el);
     });
 }
+
+
+// Mobile Scroll Activation System
+class MobileScrollActivator {
+    constructor() {
+        this.isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+        this.observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        if (this.isMobile) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('scroll-active');
+                        this.activateElement(entry.target);
+                    }, 100);
+                }
+            });
+        }, this.observerOptions);
+
+        this.startObserving();
+    }
+
+    startObserving() {
+        setTimeout(() => {
+            // Observe your existing elements
+            document.querySelectorAll('.project-card').forEach(card => {
+                this.observer.observe(card);
+            });
+
+            // document.querySelectorAll('.badge-wrapper').forEach(badge => {
+            //     this.observer.observe(badge);
+            // });
+
+            document.querySelectorAll('.certificate-card, .certificate-slide').forEach(cert => {
+                this.observer.observe(cert);
+            });
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                this.observer.observe(item);
+            });
+        }, 500);
+    }
+
+    activateElement(element) {
+        if (element.classList.contains('project-card')) {
+            // Add pulse effect to project cards
+            element.style.animation = 'none';
+            setTimeout(() => {
+                element.style.animation = 'mobilePulse 2s ease-in-out';
+            }, 10);
+        }
+    }
+}
+
+// Initialize the mobile activator
+let mobileActivator;
+document.addEventListener('DOMContentLoaded', function() {
+    mobileActivator = new MobileScrollActivator();
+});
 </script>
 
 </body>
 </html>
+
 
 
 
