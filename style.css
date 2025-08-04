@@ -2028,3 +2028,50 @@ p{
         font-size: 0.4rem;
     }
 }
+
+@media (hover: none) and (pointer: coarse) {
+    .project-card.scroll-active {
+        transform: translateY(-10px) rotateX(5deg);
+        box-shadow: 0 25px 60px var(--glow-cyan);
+        border-color: var(--primary-purple);
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(139, 92, 246, 0.15));
+    }
+    
+    .project-card.scroll-active::before {
+        transform: scale(1);
+    }
+    
+    .project-card.scroll-active .project-icon {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 10px 30px var(--glow-cyan);
+    }
+
+    /* Badge activation */
+    /* .badge-wrapper.scroll-active {
+        transform: scale(1.05) rotate(2deg);
+        filter: drop-shadow(0 0 20px var(--glow-cyan));
+    }
+    
+    .badge-wrapper.scroll-active .badge-img {
+        transform: scale(1.02);
+    } */
+
+    /* Certificate activation */
+    .certificate-card.scroll-active {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 25px 60px var(--glow-cyan);
+        border-color: var(--primary-purple);
+    }
+    
+    .certificate-card.scroll-active .certificate-img {
+        transform: scale(1.05);
+    }
+}
+
+
+
+@keyframes mobilePulse {
+    0% { box-shadow: 0 0 0 0 rgba(71, 206, 234, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(71, 206, 234, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(71, 206, 234, 0); }
+}
