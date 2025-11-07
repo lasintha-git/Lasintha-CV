@@ -422,21 +422,23 @@ p{
     overflow: hidden;
     border-radius: 30px;
 }
+
 .badgex {
-    display: flex; /* Changed from inline-flex */
-    justify-content: center; /* Center the badges horizontally */
-    align-items: center; /* Center vertically if needed */
-    gap: 10px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    margin: 0 auto; /* Additional centering for the container */
-    width: 100%; /* Ensure it takes full width of parent */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-items: center;
 }
+
 .badge-img {
     width: 180px;
     border-radius: 20px;
     display: block;
     transition: transform 0.3s ease;
-    
 }
 
 .badge-wrapper::before {
@@ -467,9 +469,12 @@ p{
         left: 125%;
     }
 }
-.badge{
+
+.badge {
     padding: 15px;
 }
+
+
 .certificate-section {
             max-width: 1200px;
             margin: 0 auto;
@@ -834,6 +839,15 @@ p{
                 font-size: 1rem;
                 min-width: 250px;
             }
+            .badgex {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+    
+            .badge-img {
+                width: 150px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -888,6 +902,15 @@ p{
         padding: 3px 6px;
         font-size: 0.65rem;
         border-radius: 10px;
+    }
+    .badgex {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .badge-img {
+        width: 100%;
+        max-width: 200px;
     }
 }
 
