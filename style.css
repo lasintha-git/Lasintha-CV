@@ -1131,16 +1131,6 @@ p {
 }
 /* ----------------------------------------------Extra Small Mobile (up to 400px)------------------------------------------------ */
 @media (max-width: 400px) {
-    
-    .nav { gap: 8px; margin: 20px 0; }
-    .nav-btn { 
-        padding: 10px 14px; 
-        font-size: 0.75rem;
-        min-height: 44px;
-        min-width: 44px;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: rgba(71, 206, 234, 0.3);
-
 
     .glitch {
         font-size: 1.6rem;
@@ -1251,6 +1241,14 @@ p {
         letter-spacing: 0.4px;
         padding: 6px 10px;
     }
+
+    .nav { gap: 8px; margin: 20px 0; }
+    .nav-btn { 
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(71, 206, 234, 0.3);
+
     
     .timeline-item::before {
         left: 5px;
@@ -1609,5 +1607,6 @@ p {
 @media (min-width: 769px) {
     .hide-desktop { display: none !important; }
 }
+
 
 
