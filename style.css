@@ -1063,6 +1063,18 @@ p {
 }
 /* ------------------------------------------------------Mobile Portrait (up to 480px)---------------------------------------------------------- */
 @media (max-width: 480px) {
+
+    .nav { gap: 8px; margin: 20px 0; }
+    .nav-btn { 
+        padding: 10px 14px; 
+        font-size: 0.75rem;
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(71, 206, 234, 0.3);
+
+
+    
     .container { padding: 15px; }
     .dp-img { width: 110px; }
     .glitch { font-size: 1.8rem; }
@@ -1586,3 +1598,4 @@ p {
 @media (min-width: 769px) {
     .hide-desktop { display: none !important; }
 }
+
