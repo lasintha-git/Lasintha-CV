@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="./images/dp.png">
+    <title>Lasintha's CV</title>
+    <link href="./style.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+  <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="bg-animation"></div>
+    
+    <div class="particles" id="particles"></div>   
+    <div class="container">
+        <header class="header liquid-glass">
+            <img class="dp-img" src="./images/dp.png">
+            <h1 class="glitch">Lasintha Erandika</h1>
+            <p class="subtitle">Network Engineer | Full Stack Developer | Technical Support Engineer</p>
+        </header>
+        <!-- social media links -->
+         <div class="social-fixed">
+        <a href="https://www.facebook.com/lasintha.erandika.7/?viewas=100000686899395" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+            </svg></a>
+        <a href="mailto:lasinthaerandika@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+            <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+            <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+            </svg></a>
+        <a href="https://linkedin.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+        </svg></a>
+        <a href="https://credly.com" target="_blank">
+            <img src="./images/Credly--Streamline-Simple-Icons.png" width="26" height="26" alt="Credly">
+        </a>
+        </div>
+        <!-- social media link iwarai -->
+
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn" onclick="scrollToSection('about')">About</button>
+            <button class="nav-btn" onclick="scrollToSection('downloadCV')">download my CV</button>
+            <button class="nav-btn" onclick="scrollToSection('skills')">Skills</button>
+            <button class="nav-btn" onclick="scrollToSection('Qualifications')">qualification</button>
+            <button class="nav-btn" onclick="scrollToSection('Badges')">Badges</button>
+            <button class="nav-btn" onclick="scrollToSection('certificate')">certificate</button>
+            
+        </nav>
+
+        <!-- About Section -->
+        <section id="about" class="section liquid-glass">
+            <h2>About Me</h2>
+            <p>Welcome to my digital realm. I'm a passionate developer with expertise in cutting-edge technologies and a love for creating innovative solutions.And I am a fast learner. I am a passionate and reliable IT professional with a good understanding of computer systems, networking, and troubleshooting. I enjoy solving technical issues, learning new technologies, and supporting users to ensure smooth IT operations. I’m looking forward to growing my career in a dynamic and tech-driven environment. </p>
+            <p>My journey spans across multiple domains - from web development to artificial intelligence, always pushing the boundaries of what's possible in the digital world.</p>
+            
+        </section>
+        <!-- about section end -->
+        <section id="downloadCV" class="section">
+        <div class="cv-section">
+        <div class="cv-container">
+            <h3 class="section-title">Download CV</h3>
+            
+            <!-- Glass CV Download Button -->
+            <div class="cv-download-container">
+                <a href="#" class="glass-btn" id="downloadBtn">
+                    Download My CV
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Animation -->
+    <div class="success-animation" id="successMessage">
+        ✅ CV Download Started!
+    </div>
+    </section> 
+        <!-- section skills -->
+         <section id="skills" class="section liquid-glass">
+            <h2>Skills</h2>
+            <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-title">LANGUAGE SKILLS</div>
+            <p class="project-desc">MOTHER TONGUE(S): Sinhala<br>OTHER LANGUAGE(S): English</p>
+            
+        </div>
+        <div class="project-card">
+            <div class="project-title">Technical skills</div>
+            <p class="project-desc">Full-Stack Developer.<br>
+                                    Network Technician.<br>
+                                    Graphic Design.<br>
+                                    windows administrator.<br>
+                                    linux administrator.<br>
+                                    technical support engineer.<br>
+            </p>
+        </div>
+        <div class="project-card">
+            <div class="project-title">OTHER SKILLS</div>
+            <p class="project-desc">Project Management.<br>
+                                    Public Relations.<br>
+                                    Teamwork.<br>
+                                    Time Management.<br>
+                                    Leadership.<br>
+                                    Effective Communication.<br>
+                                    
+
+            </p>
+        </div>
+        <div class="project-card">
+            <div class="project-title">PROGRAMMING LANGUAGES</div>
+            <p class="project-desc">Python.<br>
+                                    Web languages.<br>
+                                    Java.<br>
+                                    
+
+            </p>
+        </div>
+    </div>
+         </section>
+
+
+        <!-- Qualifications section -->
+        <section id="Qualifications" class="section liquid-glass">
+            <h2>qualification</h2>
+            <div class="timeline">
+                <div class="timeline-item al-exam">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-title">G.C.E.(A/L) EXAMINATION</div>
+                <div class="timeline-company">Subject Stream: ENGINEERING TECHNOLOGY</div>
+    
+                <!-- Hidden result section -->
+                    <div class="al-results">
+                        <p>
+                        INFORMATION & COMMUNICATION TECHNOLOGY ----- B<br>
+                        ENGINEERING TECHNOLOGY --------------------- B<br>
+                        SCIENCE FOR TECHNOLOGY --------------------- B
+                        </p>
+                    </div>
+                    
+                    <a href="#" id="downloadRBtn">
+                        <button class="nav-btn 2">DOWNLOAD PDF</button>
+                    </a>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">Cisco Certified Network Associate</div>
+                    <div class="timeline-company">introduction to networking</div>
+                    <button class="nav-btn 2" onclick="scrollToSection('certificate')">view cetificates</button>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">Open learning platform @ UOM</div>
+                    <div class="timeline-company">Full stack developer</div>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">Udemy.com</div>
+                    <div class="timeline-company">Full stack developer | <a href="https://www.udemy.com/share/101qYw3@VrbIj5lVJlZH4MzjJooe4lT4XHNqb5DVz4LGGNBnsyDLgUDDJzbsBENVKEzj6khAsQ==/" class="linku">The Complete Full-Stack Web Development Bootcamp</a></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">Introduction to IoT and Digital Transformation</div>
+                    <button class="nav-btn 2" onclick="scrollToSection('certificate')">view cetificates</button>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">Introduction to Cybersecurity</div>
+                    <button class="nav-btn 2" onclick="scrollToSection('certificate')">view cetificates</button>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-title">Python Essentials 1</div>
+                    <button class="nav-btn 2" onclick="scrollToSection('certificate')">view cetificates</button>
+                </div>
+            </div>
+        </section>
+        <!-- Qualifications section end -->
+        <!-- Badges section -->
+         <section id="Badges" class="Badges liquid-glass badge">
+        <div class="badgex">
+        <div class="badge-wrapper">
+            <img src="./images/ccna badge.png" class="badge-img" alt="CCNA Badge">
+        </div>
+        <div class="badge-wrapper">
+            <img src="./images/python-essentials-1.1.png" class="badge-img" alt="Python Essentials 1">
+        </div>
+        <div class="badge-wrapper">
+            <img src="./images/python-essentials-2.png" class="badge-img" alt="Python Essentials 2">
+        </div>
+        <div class="badge-wrapper">
+            <img src="./images/introduction-to-iot.png" class="badge-img" alt="Introduction to IoT">
+        </div>
+        </div>
+        </section>
+        <section id="certificate" class="sectiono liquid-glass">
+        <h2>My Certificates</h2>
+        
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                 <div class="slider-track" id="sliderTrack">
+                    <!-- Certificate Slide 1 -->
+                    <div class="certificate-slide">
+                        <div class="certificate-card">
+                            <img src="./images/CCNAITNUpdated20250723-32-r5qkzh - Copy.jpg" alt="CCNA Certificate" class="certificate-img">
+                            <div class="certificate-title">Cisco Certified Network Associate</div>
+                            <div class="certificate-org">Cisco Networking Academy</div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Slide 2 -->
+                    <div class="certificate-slide">
+                        <div class="certificate-card">
+                            <img src="./images/wdfb.jpg" alt="Full Stack Certificate" class="certificate-img">
+                            <div class="certificate-title">Web Design for Beginners</div>
+                            <div class="certificate-org">University of Moratuwa - Open Learning Platform</div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Slide 3 -->
+                    <div class="certificate-slide">
+                        <div class="certificate-card">
+                            <img src="./images/IntrotoIoTUpdate IOT.jpg" alt="IoT Certificate" class="certificate-img">
+                            <div class="certificate-title">Introduction to IoT and Digital Transformation</div>
+                            <div class="certificate-org">Cisco Networking Academy</div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Slide 4 -->
+                    <div class="certificate-slide">
+                        <div class="certificate-card">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23001122'/%3E%3Ctext x='200' y='140' text-anchor='middle' fill='%2300ccff' font-family='Arial' font-size='20' font-weight='bold'%3ECybersecurity%3C/text%3E%3Ctext x='200' y='165' text-anchor='middle' fill='%2300ccff' font-family='Arial' font-size='20' font-weight='bold'%3EIntroduction%3C/text%3E%3Ctext x='200' y='190' text-anchor='middle' fill='%2394a3b8' font-family='Arial' font-size='16'%3ECisco Academy%3C/text%3E%3C/svg%3E" alt="Cybersecurity Certificate" class="certificate-img">
+                            <div class="certificate-title">Introduction to Cybersecurity</div>
+                            <div class="certificate-org">Cisco Networking Academy</div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Slide 5 -->
+                    <div class="certificate-slide">
+                        <div class="certificate-card">
+                            <img src="./images/PythonEssentials1Update20250802-29-14xkem_page-0001.jpg" alt="Python Certificate" class="certificate-img">
+                            <div class="certificate-title">Python Essentials 1</div>
+                            <div class="certificate-org">Cisco Networking Academy</div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+
+                     <div class="certificate-slide">
+                        <div class="certificate-card">
+                            <img src="./images/PythonEssentials2Update20251107-31-niqcp8_page-0001.jpg" alt="Python Certificate" class="certificate-img">
+                            <div class="certificate-title">Python Essentials 2</div>
+                            <div class="certificate-org">Cisco Networking Academy</div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Slide 6 -->
+                    <div class="certificate-slide">
+                        <div class="certificate-card">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23001122'/%3E%3Ctext x='200' y='130' text-anchor='middle' fill='%2300ccff' font-family='Arial' font-size='18' font-weight='bold'%3EComplete Full-Stack%3C/text%3E%3Ctext x='200' y='150' text-anchor='middle' fill='%2300ccff' font-family='Arial' font-size='18' font-weight='bold'%3EWeb Development%3C/text%3E%3Ctext x='200' y='175' text-anchor='middle' fill='%2394a3b8' font-family='Arial' font-size='16'%3EUdemy%3C/text%3E%3C/svg%3E" alt="Udemy Certificate" class="certificate-img">
+                            <div class="certificate-title">Complete Full-Stack Web Development Bootcamp</div>
+                            <div class="certificate-org">Udemy</div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="slider-nav prev" onclick="prevSlide()">❮</div>
+            <div class="slider-nav next" onclick="nextSlide()">❯</div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="dots-container" id="dotsContainer"></div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button class="control-btn" id="playPauseBtn" onclick="toggleAutoPlay()">Pause Auto</button>
+            <button class="control-btn" onclick="resetSlider()">Reset</button>
+            <button class="control-btn" onclick="changeSpeed()">Speed: 3s</button>
+        </div>
+    </div>
+    </section>
+    <div class="projects-section">
+        <h2 class="section-title">My Projects Gallery</h2>
+        
+        <div class="slider-container2">
+            <div class="slider-track2" id="sliderTrack2"></div>
+        </div>
+    </div>
+       
+    <div class="footerBottom">
+                <p>Designed by <span class="designer">Lasintha erandika</span><br><h2>2025</h2></p>
+            </div>
+    
+<script>
+ 
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+//   scrolling animation in js
+   window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+     document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        class CertificateSlider {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = document.querySelectorAll('.certificate-slide').length;
+                this.isAutoPlay = true;
+                this.autoPlayInterval = null;
+                this.speed = 8000; // 3 seconds
+                this.speedOptions = [2000, 3000, 4000, 5000]; // 2s, 3s, 4s, 5s
+                this.currentSpeedIndex = 1;
+                
+                this.sliderTrack = document.getElementById('sliderTrack');
+                this.dotsContainer = document.getElementById('dotsContainer');
+                this.playPauseBtn = document.getElementById('playPauseBtn');
+                this.progressFill = document.getElementById('progressFill');
+                
+                this.init();
+            }
+
+            init() {
+                this.createDots();
+                this.updateSlider();
+                this.startAutoPlay();
+                this.startProgressBar();
+                
+                // Add keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prevSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
+                    if (e.key === ' ') {
+                        e.preventDefault();
+                        this.toggleAutoPlay();
+                    }
+                });
+
+                // Add touch/swipe support
+                let startX = 0;
+                let endX = 0;
+                
+                this.sliderTrack.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                this.sliderTrack.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    this.handleSwipe();
+                });
+                
+                // Mouse drag support
+                let isDragging = false;
+                
+                this.sliderTrack.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.clientX;
+                    this.sliderTrack.style.cursor = 'grabbing';
+                });
+                
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                });
+                
+                document.addEventListener('mouseup', (e) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    endX = e.clientX;
+                    this.sliderTrack.style.cursor = 'grab';
+                    this.handleSwipe();
+                });
+            }
+
+            handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }
+
+            createDots() {
+                this.dotsContainer.innerHTML = '';
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('span');
+                    dot.className = 'dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.dotsContainer.appendChild(dot);
+                }
+            }
+
+            updateSlider() {
+                const translateX = -this.currentSlide * 100;
+                this.sliderTrack.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                document.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+                
+                // Add loading effect
+                this.sliderTrack.classList.add('loading');
+                setTimeout(() => {
+                    this.sliderTrack.classList.remove('loading');
+                }, 300);
+            }
+
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateSlider();
+                this.resetProgressBar();
+            }
+
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateSlider();
+                this.resetProgressBar();
+            }
+
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateSlider();
+                this.resetProgressBar();
+            }
+
+            startAutoPlay() {
+                if (this.autoPlayInterval) clearInterval(this.autoPlayInterval);
+                if (this.isAutoPlay) {
+                    this.autoPlayInterval = setInterval(() => {
+                        this.nextSlide();
+                    }, this.speed);
+                }
+            }
+
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+
+            toggleAutoPlay() {
+                this.isAutoPlay = !this.isAutoPlay;
+                this.playPauseBtn.textContent = this.isAutoPlay ? 'Pause Auto' : 'Play Auto';
+                this.playPauseBtn.classList.toggle('active', !this.isAutoPlay);
+                
+                if (this.isAutoPlay) {
+                    this.startAutoPlay();
+                    this.startProgressBar();
+                } else {
+                    this.stopAutoPlay();
+                    this.stopProgressBar();
+                }
+            }
+
+            resetSlider() {
+                this.currentSlide = 0;
+                this.updateSlider();
+                this.resetProgressBar();
+            }
+
+            changeSpeed() {
+                this.currentSpeedIndex = (this.currentSpeedIndex + 1) % this.speedOptions.length;
+                this.speed = this.speedOptions[this.currentSpeedIndex];
+                
+                const speedBtn = document.querySelector('.control-btn:last-child');
+                speedBtn.textContent = `Speed: ${this.speed / 1000}s`;
+                
+                if (this.isAutoPlay) {
+                    this.startAutoPlay();
+                    this.startProgressBar();
+                }
+            }
+
+            startProgressBar() {
+                if (this.progressInterval) clearInterval(this.progressInterval);
+                if (!this.isAutoPlay) return;
+                
+                let progress = 0;
+                const increment = 100 / (this.speed / 50); // Update every 50ms
+                
+                this.progressInterval = setInterval(() => {
+                    progress += increment;
+                    this.progressFill.style.width = `${progress}%`;
+                    
+                    if (progress >= 100) {
+                        progress = 0;
+                    }
+                }, 50);
+            }
+
+            stopProgressBar() {
+                if (this.progressInterval) {
+                    clearInterval(this.progressInterval);
+                    this.progressInterval = null;
+                }
+            }
+
+            resetProgressBar() {
+                this.progressFill.style.width = '0%';
+                if (this.isAutoPlay) {
+                    this.startProgressBar();
+                }
+            }
+        }
+
+        // Initialize slider when page loads
+        let slider;
+        document.addEventListener('DOMContentLoaded', () => {
+            slider = new CertificateSlider();
+        });
+
+        // Global functions for button clicks
+        function nextSlide() {
+            slider.nextSlide();
+        }
+
+        function prevSlide() {
+            slider.prevSlide();
+        }
+
+        function toggleAutoPlay() {
+            slider.toggleAutoPlay();
+        }
+
+        function resetSlider() {
+            slider.resetSlider();
+        }
+
+        function changeSpeed() {
+            slider.changeSpeed();
+        }
+
+        // Pause auto-play when user hovers over the slider
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliderContainer = document.querySelector('.slider-container');
+            
+            sliderContainer.addEventListener('mouseenter', () => {
+                if (slider && slider.isAutoPlay) {
+                    slider.stopAutoPlay();
+                    slider.stopProgressBar();
+                }
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                if (slider && slider.isAutoPlay) {
+                    slider.startAutoPlay();
+                    slider.startProgressBar();
+                }
+            });
+        });
+
+
+
+// CV Download functionality
+document.getElementById('downloadBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const pdfPath = './lasintha.pdf'; // CV file path
+    downloadCVFromGitHub(pdfPath);
+});
+
+function downloadCVFromGitHub(pdfPath) {
+    // Add loading state
+    const downloadBtn = document.getElementById('downloadBtn');
+    const originalContent = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+    downloadBtn.style.pointerEvents = 'none';
+    
+    // Method 1: Try direct download first
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'Lasintha_Erandika_CV.pdf';
+    link.target = '_blank';
+    
+    // Test if file exists first
+    fetch(pdfPath, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                // File exists, proceed with download
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showSuccessMessage('CV Download Started!');
+            } else {
+                throw new Error('PDF file not found');
+            }
+        })
+        .catch(error => {
+            console.log('Direct download failed, trying fetch method...');
+            // Fallback: Use fetch method
+            downloadCVWithFetch(pdfPath);
+        })
+        .finally(() => {
+            // Restore button after a delay
+            setTimeout(() => {
+                downloadBtn.innerHTML = originalContent;
+                downloadBtn.style.pointerEvents = 'auto';
+            }, 2000);
+        });
+}
+
+function downloadCVWithFetch(pdfPath) {
+    fetch(pdfPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Lasintha_Erandika_CV.pdf';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up
+            window.URL.revokeObjectURL(url);
+            showSuccessMessage('CV Downloaded Successfully!');
+        })
+        .catch(error => {
+            console.error('Download failed:', error);
+            showSuccessMessage('PDF file not found. Please check the file path.', 'error');
+            
+            // Fallback: Try to open PDF in new tab
+            window.open(pdfPath, '_blank');
+        });
+}
+
+// Exam Results Download functionality (with different function names)
+document.getElementById('downloadRBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const pdfPath = './Exam Results .pdf'; // Exam results file path
+    downloadExamResults(pdfPath);
+});
+
+function downloadExamResults(pdfPath) {
+    // Method 1: Direct download
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'Exam_Results.pdf';
+    link.target = '_blank';
+    
+    // Test if file exists
+    fetch(pdfPath, { method: 'HEAD' })
+        .then(response => {
+            if (response.ok) {
+                // File exists, download it
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                // Fallback: Use fetch method
+                downloadExamResultsWithFetch(pdfPath);
+            }
+        })
+        .catch(error => {
+            // Fallback: Use fetch method
+            downloadExamResultsWithFetch(pdfPath);
+        });
+}
+
+function downloadExamResultsWithFetch(pdfPath) {
+    fetch(pdfPath)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Exam_Results.pdf';
+            
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+            // Final fallback: Open in new tab
+            window.open(pdfPath, '_blank');
+        });
+}
+
+// Success message function (shared by both)
+function showSuccessMessage(message, type = 'success') {
+    const successMsg = document.getElementById('successMessage');
+    
+    if (type === 'error') {
+        successMsg.style.background = 'rgba(255, 0, 0, 0.9)';
+        successMsg.textContent = '⚠️ ' + message;
+    } else {
+        successMsg.style.background = 'rgba(0, 255, 0, 0.9)';
+        successMsg.textContent = '✅ ' + message;
+    }
+    
+    successMsg.classList.add('show');
+    
+    setTimeout(() => {
+        successMsg.classList.remove('show');
+    }, 3000);
+}
+
+// Add click animation for CV download button
+document.getElementById('downloadBtn').addEventListener('click', function() {
+    this.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        this.style.transform = 'scale(1)';
+    }, 150);
+});
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, observerOptions);
+
+// Observe elements on mobile devices
+if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+    document.querySelectorAll('.project-card, .certificate-card, .badge-wrapper, .timeline-item').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+
+// Mobile Scroll Activation System
+class MobileScrollActivator {
+    constructor() {
+        this.isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+        this.observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        if (this.isMobile) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('scroll-active');
+                        this.activateElement(entry.target);
+                    }, 100);
+                }
+            });
+        }, this.observerOptions);
+
+        this.startObserving();
+    }
+
+    startObserving() {
+        setTimeout(() => {
+            // Observe your existing elements
+            document.querySelectorAll('.project-card').forEach(card => {
+                this.observer.observe(card);
+            });
+
+            // document.querySelectorAll('.badge-wrapper').forEach(badge => {
+            //     this.observer.observe(badge);
+            // });
+
+            document.querySelectorAll('.certificate-card, .certificate-slide').forEach(cert => {
+                this.observer.observe(cert);
+            });
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                this.observer.observe(item);
+            });
+        }, 500);
+    }
+
+    activateElement(element) {
+        if (element.classList.contains('project-card')) {
+            // Add pulse effect to project cards
+            element.style.animation = 'none';
+            setTimeout(() => {
+                element.style.animation = 'mobilePulse 2s ease-in-out';
+            }, 10);
+        }
+    }
+}
+
+// Initialize the mobile activator
+let mobileActivator;
+document.addEventListener('DOMContentLoaded', function() {
+    mobileActivator = new MobileScrollActivator();
+});
+
+const projects = [
+            {
+                name: "E-Commerce Platform",
+                images: [
+                    { url: "projects/IMG-20251107-WA0006.jpg", caption: "Homepage Design" },
+                    { url: "projects/IMG-20251107-WA0007.jpg", caption: "Product Catalog" },
+                    { url: "projects/IMG-20251107-WA0008.jpg", caption: "Dashboard" },
+                    // { url: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800", caption: "Mobile View" },
+                    // { url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800", caption: "Shopping Cart" },
+                    // { url: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800", caption: "Checkout" },
+                    // { url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800", caption: "Payment" },
+                    // { url: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800", caption: "Orders" },
+                    // { url: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800", caption: "Inventory" },
+                    // { url: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800", caption: "Admin Panel" }
+                ]
+            },
+            {
+                name: "Mobile Fitness App",
+                images: [
+                    { url: "projects/IMG-20251107-WA0003.jpg", caption: "Home Screen" },
+                    { url: "projects/IMG-20251107-WA0004.jpg", caption: "Workout Tracking" },
+                    { url: "projects/IMG-20251107-WA0005.jpg", caption: "Exercise Library" },
+                    // { url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800", caption: "Progress" },
+                    // { url: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800", caption: "Nutrition" },
+                    // { url: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800", caption: "Meal Plans" },
+                    // { url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800", caption: "Timer" },
+                    // { url: "https://images.unsplash.com/photo-1535743686920-55e4145369b9?w=800", caption: "Social Feed" },
+                    // { url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800", caption: "Profile" },
+                    // { url: "https://images.unsplash.com/photo-1483721310020-03333e577078?w=800", caption: "Settings" }
+                ]
+            },
+            {
+                name: "Real Estate Dashboard",
+                images: [
+                    { url: "projects/IMG-20251107-WA0021.jpg", caption: "Dashboard" },
+                    { url: "projects/IMG-20251107-WA0022.jpg", caption: "Properties" },
+                    { url: "projects/IMG-20251107-WA0023.jpg", caption: "Map View" },
+                    // { url: "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=800", caption: "Analytics" },
+                    // { url: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800", caption: "Clients" },
+                    // { url: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800", caption: "Schedule" },
+                    // { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800", caption: "Reports" },
+                    // { url: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800", caption: "Trends" },
+                    // { url: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800", caption: "Financial" },
+                    // { url: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800", caption: "Team" }
+                ]
+            }
+        ];
+
+        // Build infinite slider
+        function buildSlider() {
+            const track = document.getElementById('sliderTrack2');
+            let slides = '';
+
+            // Collect all images
+            projects.forEach(project => {
+                project.images.forEach(img => {
+                    slides += `
+                        <div class="slide-item">
+                            <img src="${img.url}" alt="${img.caption}">
+                            <div class="slide-overlay">
+                                <div class="slide-project">${project.name}</div>
+                                <div class="slide-caption">${img.caption}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+
+            // Duplicate for seamless infinite loop
+            track.innerHTML = slides + slides;
+        }
+
+        // Initialize
+        buildSlider();
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
