@@ -1248,7 +1248,7 @@ p {
         min-width: 44px;
         touch-action: manipulation;
         -webkit-tap-highlight-color: rgba(71, 206, 234, 0.3);
-
+    }
     
     .timeline-item::before {
         left: 5px;
@@ -1608,8 +1608,10 @@ p {
     .hide-desktop { display: none !important; }
 }
 
-}
 
+
+
+}
 
 /* -----------------------------slider bottom----------------------------- */
 
