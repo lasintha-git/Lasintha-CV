@@ -34,6 +34,7 @@
     --transition-normal: 0.3s;
     --transition-slow: 0.6s;
 }
+
 /* =============================================================================
                          BASE STYLES
 ============================================================================= */
@@ -103,8 +104,9 @@ p {
     0% { left: -75%; }
     100% { left: 125%; }
 }
+
 /* =============================================================================
-                            liquid glass & CONTAINER
+                            LIQUID GLASS & CONTAINER
 ============================================================================= */
 .container {
     max-width: 1200px;
@@ -120,6 +122,7 @@ p {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 /* =============================================================================
                             HEADER & NAVIGATION
 ============================================================================= */
@@ -186,8 +189,9 @@ p {
 .nav-btn:focus:not(:focus-visible) {
     outline: none;
 }
+
 /* =============================================================================
-   12. CV SECTION
+   CV SECTION
 ============================================================================= */
 .cv-section {
     display: flex;
@@ -341,8 +345,9 @@ p {
     outline: 2px solid var(--primary-cyan);
     outline-offset: 2px;
 }
+
 /* =============================================================================
-                        For all SECTIONS
+                        SECTIONS
 ============================================================================= */
 .section {
     margin: 50px 0;
@@ -387,8 +392,9 @@ p {
     height: 3px;
     background: linear-gradient(90deg, #00ff88, #00ccff);
 }
+
 /* =============================================================================
-                            Section TIMELINE
+                            TIMELINE
 ============================================================================= */
 .timeline {
     position: relative;
@@ -466,8 +472,9 @@ p {
 .linku {
     color: var(--primary-purple);
 }
+
 /* =============================================================================
-                    Section PROJECTS-skills
+                    PROJECTS-SKILLS
 ============================================================================= */
 .projects-grid {
     display: grid;
@@ -550,8 +557,9 @@ p {
     font-weight: 600;
     font-family: 'Orbitron', monospace;
 }
+
 /* =============================================================================
-                            sections BADGES
+                            BADGES
 ============================================================================= */
 .badgex {
     display: grid;
@@ -603,8 +611,9 @@ p {
 .badge-wrapper:hover::before {
     animation: shine-sweep 1.2s ease forwards;
 }
+
 /* =============================================================================
-                            section CERTIFICATES
+                            CERTIFICATES
 ============================================================================= */
 .certificate-section {
     max-width: 1200px;
@@ -854,8 +863,9 @@ p {
 .loading .certificate-card {
     animation: pulse 1.5s ease-in-out infinite;
 }
+
 /* =============================================================================
-                    section FOOTER
+                    FOOTER
 ============================================================================= */
 .footerBottom {
     background-color: #000;
@@ -876,18 +886,108 @@ p {
     margin: 0px 5px;
 }
 
+/* =============================================================================
+                    PROJECTS SLIDER BOTTOM
+============================================================================= */
+.projects-section {
+    margin: 50px auto;
+    padding: 40px;
+    max-width: 1400px;
+    background: rgba(255, 255, 255, 0.026);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-/* ============================================================================================================================================
-                                    RESPONSIVE DESIGN START HERE
-============================================================================================================================================== */
+.slider-container2 {
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+}
 
-/* ------------------------------------------------Extra Large Screens (2560px+) ----------------------------------------------*/
+.slider-track2 {
+    display: flex;
+    width: max-content;
+    animation: infiniteScroll 20s linear infinite;
+}
+
+.slider-track2:hover {
+    animation-play-state: paused;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.slide-item {
+    min-width: 400px;
+    height: 300px;
+    margin: 0 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #47ceea;
+    position: relative;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.slide-item:hover {
+    transform: scale(1.05);
+    border-color: #824dff;
+    box-shadow: 0 25px 60px rgba(0, 212, 255, 0.5);
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.slide-item:hover .slide-overlay {
+    transform: translateY(0);
+}
+
+.slide-project {
+    color: #47ceea;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.slide-caption {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* =============================================================================
+                    RESPONSIVE DESIGN
+============================================================================= */
+
+/* Extra Large Screens (2560px+) */
 @media (min-width: 2560px) {
     body {
-         font-size: 18px; 
+        font-size: 18px; 
     }
     .container { 
-        max-width: 1800px; padding: 80px; 
+        max-width: 1800px; 
+        padding: 80px; 
     }
     .glitch { 
         font-size: 6rem; 
@@ -899,7 +999,8 @@ p {
         font-size: 3rem; 
     }
     .projects-grid { 
-        grid-template-columns: repeat(4, 1fr); gap: 50px; 
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 50px; 
     }
     .project-card { 
         padding: 50px; 
@@ -925,109 +1026,298 @@ p {
         max-width: 500px; 
     }
     .certificate-title { 
-        -size: 1.8rem; 
+        font-size: 1.8rem; 
     }
     .section-title { 
         font-size: 3rem; 
     }
     .glass-btn { 
-        padding: 24px 48px; font-size: 1.3rem; min-width: 320px; 
+        padding: 24px 48px; 
+        font-size: 1.3rem; 
+        min-width: 320px; 
     }
 }
 
-/* ------------------------------------------Large Screens (1440px - 2559px) ---------------------------------------------------------*/
-
+/* Large Screens (1440px - 2559px) */
 @media (min-width: 1440px) and (max-width: 2559px) {
-    .container { max-width: 1400px; padding: 60px; }
-    .projects-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    .slider-container { max-width: 900px; }
-    .certificate-img { max-width: 450px; }
+    .container { 
+        max-width: 1400px; 
+        padding: 60px; 
+    }
+    .projects-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 40px; 
+    }
+    .slider-container { 
+        max-width: 900px; 
+    }
+    .certificate-img { 
+        max-width: 450px; 
+    }
 }
 
-/* -----------------------------------------------Desktop size (1201px - 1439px)-------------------------------------- */
+/* Desktop size (1201px - 1439px) */
 @media (min-width: 1201px) and (max-width: 1439px) {
-    .container { padding: 50px; }
-    .dp-img { width: 220px; }
-    .glitch { font-size: 5rem; }
-    .subtitle { font-size: 1.5rem; }
-    .social-fixed { top: 50%; left: 10px; transform: translateY(-50%); flex-direction: column; gap: 15px; }
-    .social-fixed a { width: 50px; height: 50px; font-size: 24px; }
-    .nav { gap: 30px; }
-    .nav-btn { padding: 12px 24px; font-size: 0.9rem; }
-    .section, .sectiono { padding: 50px; }
-    .section h2, .sectiono h2 { font-size: 2.5rem; }
-    .timeline::before { left: 50px; }
-    .timeline-item { padding-left: 100px; }
-    .timeline-item::before { left: 43px; }
-    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-    .project-card { padding: 35px; }
-    .project-card:hover { transform: translateY(-8px) rotateX(3deg); }
-    .badge-img { width: 170px; }
-    .slider-wrapper { height: 500px; }
-    .slider-container { max-width: 750px; }
-    .certificate-img { max-width: 380px; }
-    .certificate-title { font-size: 1.4rem; }
-    .section-title { font-size: 2.3rem; }
-    .glass-btn { padding: 20px 40px; font-size: 1.1rem; min-width: 280px; }
+    .container { 
+        padding: 50px; 
+    }
+    .dp-img { 
+        width: 220px; 
+    }
+    .glitch { 
+        font-size: 5rem; 
+    }
+    .subtitle { 
+        font-size: 1.5rem; 
+    }
+    .social-fixed { 
+        top: 50%; 
+        left: 10px; 
+        transform: translateY(-50%); 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .social-fixed a { 
+        width: 50px; 
+        height: 50px; 
+        font-size: 24px; 
+    }
+    .nav { 
+        gap: 30px; 
+    }
+    .nav-btn { 
+        padding: 12px 24px; 
+        font-size: 0.9rem; 
+    }
+    .section, .sectiono { 
+        padding: 50px; 
+    }
+    .section h2, .sectiono h2 { 
+        font-size: 2.5rem; 
+    }
+    .timeline::before { 
+        left: 50px; 
+    }
+    .timeline-item { 
+        padding-left: 100px; 
+    }
+    .timeline-item::before { 
+        left: 43px; 
+    }
+    .projects-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px; 
+    }
+    .project-card { 
+        padding: 35px; 
+    }
+    .project-card:hover { 
+        transform: translateY(-8px) rotateX(3deg); 
+    }
+    .badge-img { 
+        width: 170px; 
+    }
+    .slider-wrapper { 
+        height: 500px; 
+    }
+    .slider-container { 
+        max-width: 750px; 
+    }
+    .certificate-img { 
+        max-width: 380px; 
+    }
+    .certificate-title { 
+        font-size: 1.4rem; 
+    }
+    .section-title { 
+        font-size: 2.3rem; 
+    }
+    .glass-btn { 
+        padding: 20px 40px; 
+        font-size: 1.1rem; 
+        min-width: 280px; 
+    }
 }
 
-/* ------------------------------------------------Laptop (1025px - 1200px) ---------------------------------------------------- */
+/* Laptop (1025px - 1200px) */
 @media (min-width: 1025px) and (max-width: 1200px) {
-    .container { padding: 40px; }
-    .dp-img { width: 200px; }
-    .glitch { font-size: 4rem; }
-    .subtitle { font-size: 1.4rem; }
-    .social-fixed { top: 50%; left: 15px; transform: translateY(-50%); flex-direction: column; gap: 15px; }
-    .social-fixed a { width: 50px; height: 50px; font-size: 24px; }
-    .nav { gap: 25px; }
-    .nav-btn { padding: 10px 20px; font-size: 0.9rem; }
-    .section, .sectiono { padding: 40px; }
-    .section h2, .sectiono h2 { font-size: 2.3rem; }
-    .timeline::before { left: 50px; }
-    .timeline-item { padding-left: 100px; }
-    .timeline-item::before { left: 43px; }
-    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-    .project-card { padding: 35px; }
-    .project-icon { width: 60px; height: 60px; font-size: 1.8rem; }
-    .project-title { font-size: 1.4rem; }
-    .badge-img { width: 100px; }
-    .slider-wrapper { height: 500px; }
-    .slider-container { max-width: 800px; }
-    .certificate-img { max-width: 400px; }
-    .certificate-title { font-size: 1.5rem; }
-    .section-title { font-size: 2.5rem; }
-    .glass-btn { padding: 20px 40px; font-size: 1.1rem; min-width: 280px; }
+    .container { 
+        padding: 40px; 
+    }
+    .dp-img { 
+        width: 200px; 
+    }
+    .glitch { 
+        font-size: 4rem; 
+    }
+    .subtitle { 
+        font-size: 1.4rem; 
+    }
+    .social-fixed { 
+        top: 50%; 
+        left: 15px; 
+        transform: translateY(-50%); 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .social-fixed a { 
+        width: 50px; 
+        height: 50px; 
+        font-size: 24px; 
+    }
+    .nav { 
+        gap: 25px; 
+    }
+    .nav-btn { 
+        padding: 10px 20px; 
+        font-size: 0.9rem; 
+    }
+    .section, .sectiono { 
+        padding: 40px; 
+    }
+    .section h2, .sectiono h2 { 
+        font-size: 2.3rem; 
+    }
+    .timeline::before { 
+        left: 50px; 
+    }
+    .timeline-item { 
+        padding-left: 100px; 
+    }
+    .timeline-item::before { 
+        left: 43px; 
+    }
+    .projects-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px; 
+    }
+    .project-card { 
+        padding: 35px; 
+    }
+    .project-icon { 
+        width: 60px; 
+        height: 60px; 
+        font-size: 1.8rem; 
+    }
+    .project-title { 
+        font-size: 1.4rem; 
+    }
+    .badge-img { 
+        width: 100px; 
+    }
+    .slider-wrapper { 
+        height: 500px; 
+    }
+    .slider-container { 
+        max-width: 800px; 
+    }
+    .certificate-img { 
+        max-width: 400px; 
+    }
+    .certificate-title { 
+        font-size: 1.5rem; 
+    }
+    .section-title { 
+        font-size: 2.5rem; 
+    }
+    .glass-btn { 
+        padding: 20px 40px; 
+        font-size: 1.1rem; 
+        min-width: 280px; 
+    }
 }
-/* --------------------------------------------------------Tablet (769px - 1024px)------------------------------------------------- */
+
+/* Tablet (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .container { padding: 30px; }
-    .dp-img { width: 180px; }
-    .glitch { font-size: 3.5rem; }
-    .subtitle { font-size: 1.3rem; }
-    .social-fixed { top: 50%; left: 20px; transform: translateY(-50%); flex-direction: column; gap: 15px; }
-    .social-fixed a { width: 50px; height: 50px; font-size: 22px; }
-    .nav { gap: 20px; }
-    .nav-btn { padding: 10px 18px; font-size: 0.85rem; }
-    .section, .sectiono { padding: 35px; }
-    .section h2, .sectiono h2 { font-size: 2.2rem; }
-    .timeline::before { left: 40px; }
-    .timeline-item { padding-left: 80px; }
-    .timeline-item::before { left: 33px; }
-    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-    .badge-img { width: 160px; }
-    .slider-wrapper { height: 500px; }
-    .slider-container { max-width: 700px; }
-    .certificate-img { max-width: 350px; }
-    .certificate-title { font-size: 1.3rem; }
-    .section-title { font-size: 2.2rem; }
-    .glass-btn { padding: 20px 40px; font-size: 1.1rem; min-width: 280px; }
+    .container { 
+        padding: 30px; 
+    }
+    .dp-img { 
+        width: 180px; 
+    }
+    .glitch { 
+        font-size: 3.5rem; 
+    }
+    .subtitle { 
+        font-size: 1.3rem; 
+    }
+    .social-fixed { 
+        top: 50%; 
+        left: 20px; 
+        transform: translateY(-50%); 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .social-fixed a { 
+        width: 50px; 
+        height: 50px; 
+        font-size: 22px; 
+    }
+    .nav { 
+        gap: 20px; 
+    }
+    .nav-btn { 
+        padding: 10px 18px; 
+        font-size: 0.85rem; 
+    }
+    .section, .sectiono { 
+        padding: 35px; 
+    }
+    .section h2, .sectiono h2 { 
+        font-size: 2.2rem; 
+    }
+    .timeline::before { 
+        left: 40px; 
+    }
+    .timeline-item { 
+        padding-left: 80px; 
+    }
+    .timeline-item::before { 
+        left: 33px; 
+    }
+    .projects-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px; 
+    }
+    .badge-img { 
+        width: 160px; 
+    }
+    .slider-wrapper { 
+        height: 500px; 
+    }
+    .slider-container { 
+        max-width: 700px; 
+    }
+    .certificate-img { 
+        max-width: 350px; 
+    }
+    .certificate-title { 
+        font-size: 1.3rem; 
+    }
+    .section-title { 
+        font-size: 2.2rem; 
+    }
+    .glass-btn { 
+        padding: 20px 40px; 
+        font-size: 1.1rem; 
+        min-width: 280px; 
+    }
 }
-/* -------------------------------Mobile Landscape & Small Tablet (481px - 768px)-------------------------------------------------- */
+
+/* Mobile Landscape & Small Tablet (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-    .container { padding: 20px; }
-    .dp-img { width: 150px; }
-    .glitch { font-size: 2.5rem; }
-    .subtitle { font-size: 1.1rem; }
+    .container { 
+        padding: 20px; 
+    }
+    .dp-img { 
+        width: 150px; 
+    }
+    .glitch { 
+        font-size: 2.5rem; 
+    }
+    .subtitle { 
+        font-size: 1.1rem; 
+    }
     .social-fixed { 
         position: fixed;
         bottom: 20px; 
@@ -1038,33 +1328,118 @@ p {
         flex-direction: row; 
         gap: 12px; 
     }
-    .social-fixed a { width: 45px; height: 45px; font-size: 20px; }
-    .nav { gap: 15px; }
-    .nav-btn { padding: 8px 14px; font-size: 0.8rem; }
-    .section, .sectiono { padding: 25px; }
-    .section h2, .sectiono h2 { font-size: 1.8rem; }
-    .timeline::before { left: 25px; }
-    .timeline-item { padding-left: 60px; }
-    .timeline-item::before { left: 18px; }
-    .projects-grid { grid-template-columns: 1fr; gap: 25px; }
-    .project-card { padding: 30px; max-width: 100%; }
-    .badge-img { width: 140px; }
-    .slider-wrapper { height: 450px; }
-    .certificate-img { max-width: 300px; }
-    .certificate-title { font-size: 1.2rem; }
-    .section-title { font-size: 2rem; }
-    .glass-btn { padding: 18px 35px; font-size: 1rem; min-width: 250px; }
-    .badgex { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; padding: 15px; }
-    .badge-img { width: 150px; }
-    
-    /* Disable expensive animations on tablets */
-    .bg-animation::before { animation-duration: 30s; }
-    .particle { opacity: 0.5; }
+    .social-fixed a { 
+        width: 45px; 
+        height: 45px; 
+        font-size: 20px; 
+    }
+    .nav { 
+        gap: 15px; 
+    }
+    .nav-btn { 
+        padding: 8px 14px; 
+        font-size: 0.8rem; 
+    }
+    .section, .sectiono { 
+        padding: 25px; 
+    }
+    .section h2, .sectiono h2 { 
+        font-size: 1.8rem; 
+    }
+    .timeline::before { 
+        left: 25px; 
+    }
+    .timeline-item { 
+        padding-left: 60px; 
+    }
+    .timeline-item::before { 
+        left: 18px; 
+    }
+    .projects-grid { 
+        grid-template-columns: 1fr; 
+        gap: 25px; 
+    }
+    .project-card { 
+        padding: 30px; 
+        max-width: 100%; 
+    }
+    .badge-img { 
+        width: 140px; 
+    }
+    .slider-wrapper { 
+        height: 450px; 
+    }
+    .certificate-img { 
+        max-width: 300px; 
+    }
+    .certificate-title { 
+        font-size: 1.2rem; 
+    }
+    .section-title { 
+        font-size: 2rem; 
+    }
+    .glass-btn { 
+        padding: 18px 35px; 
+        font-size: 1rem; 
+        min-width: 250px; 
+    }
+    .badgex { 
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+        gap: 15px; 
+        padding: 15px; 
+    }
+    .badge-img { 
+        width: 150px; 
+    }
+    .bg-animation::before { 
+        animation-duration: 30s; 
+    }
+    .particle { 
+        opacity: 0.5; 
+    }
+    .slide-item {
+        min-width: 300px;
+        height: 200px;
+        margin: 0 10px;
+    }
+    .slider-track2 {
+        animation-duration: 30s;
+    }
 }
-/* ------------------------------------------------------Mobile Portrait (up to 480px)---------------------------------------------------------- */
-@media (max-width: 480px) {
 
-    .nav { gap: 8px; margin: 20px 0; }
+/* Mobile Portrait (up to 480px) */
+@media (max-width: 480px) {
+    .container { 
+        padding: 15px; 
+    }
+    .dp-img { 
+        width: 110px; 
+    }
+    .glitch { 
+        font-size: 1.8rem; 
+    }
+    .subtitle { 
+        font-size: 0.9rem; 
+    }
+    .social-fixed {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        top: auto;
+        left: auto;
+        transform: none;
+        flex-direction: row;
+        gap: 8px;
+    }
+    .social-fixed a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .nav { 
+        gap: 8px; 
+        margin: 20px 0; 
+    }
     .nav-btn { 
         padding: 10px 14px; 
         font-size: 0.75rem;
@@ -1072,66 +1447,116 @@ p {
         min-width: 44px;
         touch-action: manipulation;
         -webkit-tap-highlight-color: rgba(71, 206, 234, 0.3);
-
-
-    
-    .container { padding: 15px; }
-    .dp-img { width: 110px; }
-    .glitch { font-size: 1.8rem; }
-    .subtitle { font-size: 0.9rem; }
-    .nav { gap: 8px; margin: 20px 0; }
-    .nav-btn { padding: 6px 10px; font-size: 0.7rem; }
-    .section, .sectiono { padding: 15px; margin: 20px 0; }
-    .section h2, .sectiono h2 { font-size: 1.3rem; margin-bottom: 15px; }
-    .timeline::before { left: 8px; width: 2px; }
-    .timeline-item { padding-left: 30px; margin: 20px 0; }
-    .timeline-item::before { left: 2px; width: 10px; height: 10px; border: 2px solid #0a0a0a; }
-    .project-card { padding: 20px; }
-    .project-icon { width: 40px; height: 40px; font-size: 1.2rem; }
-    .project-title { font-size: 1rem; }
-    .projects-grid { grid-template-columns: 1fr; gap: 15px; margin-top: 20px; padding: 0 5px; }
-    .project-card { padding: 15px; border-radius: 15px; }
-    .project-icon { width: 35px; height: 35px; font-size: 1rem; margin-bottom: 12px; }
-    .project-title { font-size: 0.9rem; margin-bottom: 8px; }
-    .project-desc { font-size: 0.75rem; margin-bottom: 12px; }
-    .tech-tag { padding: 3px 6px; font-size: 0.65rem; border-radius: 10px; }
-    .badge-img { width: 100px; }
-    .certificate-img { max-width: 200px; }
-    .slider-nav { width: 35px; height: 35px; font-size: 14px; }
-    .control-btn { padding: 6px 12px; font-size: 0.6rem; }
-    .section-title { font-size: 1.5rem; }
-    .glass-btn { padding: 12px 20px; font-size: 0.8rem; min-width: 180px; }
-    .badgex { grid-template-columns: 1fr; gap: 15px; }
-    .badge-img { width: 100%; max-width: 200px; }
-    
-    .social-fixed {
-        gap: 8px;
     }
-    
-    .social-fixed a {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
+    .section, .sectiono { 
+        padding: 15px; 
+        margin: 20px 0; 
     }
-    
-    /* Disable heavy animations on mobile */
-    /* .bg-animation::before { 
-        animation: none; 
-        opacity: 0.3; 
-    } */
-    
-    /* .particle { 
-        display: none; 
-    } */
-    
+    .section h2, .sectiono h2 { 
+        font-size: 1.3rem; 
+        margin-bottom: 15px; 
+    }
+    .timeline::before { 
+        left: 8px; 
+        width: 2px; 
+    }
+    .timeline-item { 
+        padding-left: 30px; 
+        margin: 20px 0; 
+    }
+    .timeline-item::before { 
+        left: 2px; 
+        width: 10px; 
+        height: 10px; 
+        border: 2px solid #0a0a0a; 
+    }
+    .project-card { 
+        padding: 20px; 
+    }
+    .project-icon { 
+        width: 40px; 
+        height: 40px; 
+        font-size: 1.2rem; 
+    }
+    .project-title { 
+        font-size: 1rem; 
+    }
+    .projects-grid { 
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+        margin-top: 20px; 
+        padding: 0 5px; 
+    }
+    .project-card { 
+        padding: 15px; 
+        border-radius: 15px; 
+    }
+    .project-icon { 
+        width: 35px; 
+        height: 35px; 
+        font-size: 1rem; 
+        margin-bottom: 12px; 
+    }
+    .project-title { 
+        font-size: 0.9rem; 
+        margin-bottom: 8px; 
+    }
+    .project-desc { 
+        font-size: 0.75rem; 
+        margin-bottom: 12px; 
+    }
+    .tech-tag { 
+        padding: 3px 6px; 
+        font-size: 0.65rem; 
+        border-radius: 10px; 
+    }
+    .badge-img { 
+        width: 100px; 
+    }
+    .certificate-img { 
+        max-width: 200px; 
+    }
+    .slider-nav { 
+        width: 35px; 
+        height: 35px; 
+        font-size: 14px; 
+    }
+    .control-btn { 
+        padding: 6px 12px; 
+        font-size: 0.6rem; 
+    }
+    .section-title { 
+        font-size: 1.5rem; 
+    }
+    .glass-btn { 
+        padding: 12px 20px; 
+        font-size: 0.8rem; 
+        min-width: 180px; 
+    }
+    .badgex { 
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+    }
+    .badge-img { 
+        width: 100%; 
+        max-width: 200px; 
+    }
     .project-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 30px var(--glow-cyan);
     }
+    .slide-item {
+        min-width: 280px;
+        height: 180px;
+        margin: 0 8px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
 }
-/* ----------------------------------------------Extra Small Mobile (up to 400px)------------------------------------------------ */
-@media (max-width: 400px) {
 
+/* Extra Small Mobile (up to 400px) */
+@media (max-width: 400px) {
     .glitch {
         font-size: 1.6rem;
         position: static;
@@ -1240,10 +1665,6 @@ p {
         font-size: 0.65rem;
         letter-spacing: 0.4px;
         padding: 6px 10px;
-    }
-
-    .nav { gap: 8px; margin: 20px 0; }
-    .nav-btn { 
         min-height: 44px;
         min-width: 44px;
         touch-action: manipulation;
@@ -1290,7 +1711,6 @@ p {
     }
     
     .badge-img {
-        /* border-radius: 5%; */
         width: 80px;
     }
     
@@ -1354,11 +1774,19 @@ p {
         font-size: 16px;
     }
 }
+
 /* Landscape Mobile (max-height: 500px) */
 @media (max-height: 500px) and (orientation: landscape) {
-    .header { padding: 20px 0; }
-    .glitch { font-size: 2rem; }
-    .subtitle { font-size: 1rem; margin-top: 5px; }
+    .header { 
+        padding: 20px 0; 
+    }
+    .glitch { 
+        font-size: 2rem; 
+    }
+    .subtitle { 
+        font-size: 1rem; 
+        margin-top: 5px; 
+    }
     .social-fixed { 
         position: fixed;
         bottom: 10px; 
@@ -1369,12 +1797,30 @@ p {
         flex-direction: row; 
         gap: 8px; 
     }
-    .social-fixed a { width: 35px; height: 35px; font-size: 16px; }
-    .nav { margin: 20px 0; gap: 10px; }
-    .nav-btn { padding: 6px 12px; font-size: 0.7rem; }
-    .section, .sectiono { padding: 20px; margin: 20px 0; }
-    .section h2, .sectiono h2 { font-size: 1.5rem; margin-bottom: 15px; }
-    .slider-wrapper { height: 300px; }
+    .social-fixed a { 
+        width: 35px; 
+        height: 35px; 
+        font-size: 16px; 
+    }
+    .nav { 
+        margin: 20px 0; 
+        gap: 10px; 
+    }
+    .nav-btn { 
+        padding: 6px 12px; 
+        font-size: 0.7rem; 
+    }
+    .section, .sectiono { 
+        padding: 20px; 
+        margin: 20px 0; 
+    }
+    .section h2, .sectiono h2 { 
+        font-size: 1.5rem; 
+        margin-bottom: 15px; 
+    }
+    .slider-wrapper { 
+        height: 300px; 
+    }
 }
 
 /* Additional Responsive Grid Fix */
@@ -1441,6 +1887,7 @@ p {
         font-size: 0.8em;
     }
 }
+
 /* Reduced Motion for Accessibility */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1507,9 +1954,9 @@ p {
         outline-offset: 3px !important;
     }
 }
+
 /* Dark Mode (Explicit) */
 @media (prefers-color-scheme: dark) {
-    /* Already dark by default, but ensuring consistency */
     body {
         background: var(--dark-bg);
         color: var(--text-primary);
@@ -1518,16 +1965,14 @@ p {
 
 /* Touch Device Enhancements */
 @media (hover: none) and (pointer: coarse) {
-    /* Increase tap target sizes */
     .nav-btn,
     .control-btn,
     .slider-nav,
     .dot {
-        min-height: 4px;
-        min-width: 4px;
+        min-height: 44px;
+        min-width: 44px;
     }
     
-    /* Add active state for touch feedback */
     .nav-btn:active,
     .control-btn:active,
     .glass-btn:active {
@@ -1560,13 +2005,13 @@ p {
         transform: scale(1.05);
     }
     
-    /* Remove hover effects on touch devices */
     .project-card:hover,
     .certificate-card:hover,
     .badge-wrapper:hover::before {
         animation: none;
     }
 }
+
 /* Performance Optimization Classes */
 .will-animate {
     will-change: transform, opacity;
@@ -1575,9 +2020,6 @@ p {
 .optimize-rendering {
     contain: layout style paint;
 }
-
-
-
 
 /* Spacing Utilities */
 .mt-sm { margin-top: var(--spacing-sm); }
@@ -1607,166 +2049,3 @@ p {
 @media (min-width: 769px) {
     .hide-desktop { display: none !important; }
 }
-
-
-
-
-}
-
-/* -----------------------------slider bottom----------------------------- */
-
-.projects-section {
-            margin: 50px auto;
-            padding: 40px;
-            max-width: 1400px;
-            background: rgba(255, 255, 255, 0.026);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #00ccff;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, #00ff88, #00ccff);
-            margin: 15px auto 0;
-        }
-
-        /* Fast Infinite Slider */
-        .slider-container2 {
-            position: relative;
-            overflow: hidden;
-            margin: 40px 0;
-        }
-
-        .slider-track2 {
-            display: flex;
-            width: max-content;
-            animation: infiniteScroll 20s linear infinite;
-        }
-
-        .slider-track2:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes infiniteScroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .slide-item {
-            min-width: 400px;
-            height: 300px;
-            margin: 0 15px;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid #47ceea;
-            position: relative;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-
-        .slide-item:hover {
-            transform: scale(1.05);
-            border-color: #824dff;
-            box-shadow: 0 25px 60px rgba(0, 212, 255, 0.5);
-        }
-
-        .slide-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .slide-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .slide-item:hover .slide-overlay {
-            transform: translateY(0);
-        }
-
-        .slide-project {
-            color: #47ceea;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        .slide-caption {
-            color: #94a3b8;
-            font-size: 0.85rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .slide-item {
-                min-width: 300px;
-                height: 200px;
-                margin: 0 10px;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .slider-track {
-                animation-duration: 30s;
-            }
-
-        }
-
-
-
-
-
-
-@media (max-width: 400px) {
-    .glitch {
-        font-size: 1.6rem;
-        position: static;
-        text-align: center;
-        margin: 20px auto 10px auto;
-    }
-    
-    .header {
-        text-align: center;
-        padding: 20px 0;
-        position: relative;
-    }
-    
-    .subtitle {
-        font-size: 1rem;
-        text-align: center;
-        margin-top: 10px;
-    }
-    
-    .dp-img {
-        position: static;
-        display: block;
-        margin: 20px auto;
-        width: 120px;
-        border-radius: 50%;
-    }
