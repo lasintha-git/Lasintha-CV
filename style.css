@@ -27,7 +27,7 @@
     /* Border Radius */
     --border-radius-sm: 12px;
     --border-radius-md: 20px;
-    --border-radius-lg: 30px;
+    --border-radius-lg: 20px;
     
     /* Transitions */
     --transition-fast: 0.2s;
@@ -564,7 +564,7 @@ p {
 .badgex {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
+    gap: 15px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -573,7 +573,7 @@ p {
 }
 
 .badge {
-    padding: 15px;
+    padding: 10px;
 }
 
 .badge-wrapper {
@@ -586,7 +586,7 @@ p {
 }
 
 .badge-img {
-    width: 130px;
+    width: 100px;
     border-radius: var(--border-radius-md);
     display: block;
     transition: transform var(--transition-normal) ease;
@@ -1773,6 +1773,7 @@ p {
         height: 30px;
         font-size: 16px;
     }
+    
 }
 
 /* Landscape Mobile (max-height: 500px) */
@@ -1969,8 +1970,8 @@ p {
     .control-btn,
     .slider-nav,
     .dot {
-        min-height: 44px;
-        min-width: 44px;
+        min-height: 20px;
+        min-width: 20px;
     }
     
     .nav-btn:active,
