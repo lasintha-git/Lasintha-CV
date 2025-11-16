@@ -1713,7 +1713,9 @@ p {
     .badge-img {
         width: 80px;
     }
-    
+    .badgex{
+        grid-template-columns: repeat(2, 1fr);
+    }
     .certificate-section {
         padding: 20px;
     }
