@@ -190,42 +190,12 @@
         </section>
         <!-- Qualifications section end -->
         <!-- Badges section -->
-         <section id="Badges" class="Badges liquid-glass badge">
-        <div class="badgex">
-        <div class="badge-wrapper">
-            <img src="./badges/ccna badge.png" class="badge-img" alt="CCNA Badge">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/ccna-switching-routing-and-wireless-essentials.1 (1).png" class="badge-img" alt="CCNA sem2">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/networking-basics.png" class="badge-img" alt="networking-basics">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/python-essentials-1.1 (1).png" class="badge-img" alt="Python Essentials 1">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/python-essentials-2 (1).png" class="badge-img" alt="Python Essentials 2">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/introduction-to-iot (1).png" class="badge-img" alt="Introduction to IoT">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/english-for-it-1 (1).png" class="badge-img" alt="english-for-it-1">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/english-for-it-2 (1).png" class="badge-img" alt="english-for-it-2">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/computer-hardware-basics (1).png" class="badge-img" alt="computer-hardware-basics">
-        </div>
-        <div class="badge-wrapper">
-            <img src="./badges/javascript-essentials-1.png" class="badge-img" alt="javascript-essentials-1">
-        </div>
-        
-
-        </div>
+        <section id="badges" class="section liquid-glass">
+        <h2>Badge Gallery</h2>
+        <div id="sliders-container" class="sliders-grid"></div>
         </section>
+
+
         <section id="certificate" class="sectiono liquid-glass">
         <h2>My Certificates</h2>
         
@@ -996,11 +966,108 @@ const projects = [
         // Initialize
         buildSlider();
 
+
+
+const badges = [
+            "./badges/ccna badge.png",
+            "./badges/ccna-switching-routing-and-wireless-essentials.1 (1).png",
+            "./badges/computer-hardware-basics (1).png",
+            "./badges/english-for-it-1 (1).png",
+            "./badges/english-for-it-2 (1).png",
+            "./badges/introduction-to-iot (1).png",
+            "./badges/javascript-essentials-1 (1).png",
+            "./badges/networking-basics.png",
+            "./badges/python-essentials-1.1.png",
+            "./badges/python-essentials-2.png"
+        ];
+
+        let autoplay = [];
+
+        function createSliders() {
+            const container = document.getElementById("sliders-container");
+            container.innerHTML = "";
+            autoplay.forEach(clearInterval);
+            autoplay = [];
+
+            const isMobile = window.innerWidth < 480;
+            const sliders = isMobile ? 2 : 4;
+            const perSlider = isMobile ? 5 : 3;
+            const perSlide = isMobile ? 2 : 1;
+
+            for (let s = 0; s < sliders; s++) {
+                const start = s * perSlider;
+                const imgs = badges.slice(start, start + perSlider);
+
+                const wrapper = document.createElement("div");
+                wrapper.className = "slider-wrapper1";
+
+                const slides = Math.ceil(imgs.length / perSlide);
+
+                wrapper.innerHTML = `
+                    <div class="slider-container">
+                        <div class="slider-track" data-slider="${s}">
+                            ${Array.from({ length: slides }, (_, i) => {
+                                const chunk = imgs.slice(i * perSlide, i * perSlide + perSlide);
+                                return `
+                                    <div class="slide">
+                                        ${chunk.map(src => `
+                                            <div class="image-card">
+                                                <img src="${src}" loading="lazy">
+                                            </div>
+                                        `).join("")}
+                                    </div>`;
+                            }).join("")}
+                        </div>
+                    </div>
+                    <div class="dots" data-slider="${s}">
+                        ${Array.from({ length: slides }, (_, i) =>
+                            `<div class="dot ${i === 0 ? "active" : ""}" data-slide="${i}"></div>`
+                        ).join("")}
+                    </div>
+                `;
+
+                container.appendChild(wrapper);
+            }
+
+            initSliders();
+        }
+
+        function initSliders() {
+            const sliders = document.querySelectorAll(".slider-track");
+
+            sliders.forEach((track, index) => {
+                let current = 0;
+                const dots = document.querySelectorAll(`.dots[data-slider="${index}"] .dot`);
+                const slides = track.children.length;
+
+                function update() {
+                    track.style.transform = `translateX(-${current * 100}%)`;
+                    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+                }
+
+                autoplay[index] = setInterval(() => {
+                    current = (current + 1) % slides;
+                    update();
+                }, 3000);
+
+                dots.forEach(dot => {
+                    dot.onclick = () => {
+                        current = Number(dot.dataset.slide);
+                        update();
+                    };
+                });
+
+                update();
+            });
+        }
+
+        createSliders();
+        window.addEventListener("resize", () => setTimeout(createSliders, 250));
+
 </script>
 
 </body>
 </html>
-
 
 
 
