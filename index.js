@@ -561,16 +561,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const badges = [
-    "./badges/ccna badge.png",
-    "./badges/ccna-switching-routing-and-wireless-essentials.1 (1).png",
-    "./badges/computer-hardware-basics (1).png",
-    "./badges/english-for-it-1 (1).png",
-    "./badges/english-for-it-2 (1).png",
-    "./badges/introduction-to-iot (1).png",
+    "./badges/ccna-introduction-to-networks.png",
+    "./badges/ccna-switching-routing-and-wireless-essentials.1.png",
+    "./badges/c-essentials-1.png",
+    "./badges/computer-hardware-basics.png",
+    "./badges/cyber-threat-management.png",
+    "./badges/english-for-it-1.png",
+    "./badges/english-for-it-2.png",
+    "./badges/introduction-to-cybersecurity.png",
+    "./badges/introduction-to-iot.png",
+    "./badges/it-customer-support-basics.png",
+    "./badges/it-essentials.png",
     "./badges/javascript-essentials-1.png",
+    "./badges/javascript-essentials-2.png",
+    "./badges/junior-cybersecurity-analyst-career-path.1.png",
+    "./badges/lfs114-introduction-to-free5gc.png",
     "./badges/networking-basics.png",
-    "./badges/python-essentials-1.1 (1).png",
-    "./badges/python-essentials-2 (1).png"
+    "./badges/operating-systems-basics.png",
+    "./badges/python-essentials-1.1.png",
+    "./badges/python-essentials-2.png"
+
+
 ];
 
 let autoplay = [];
@@ -582,13 +593,18 @@ function createSliders() {
     autoplay = [];
 
     const isMobile = window.innerWidth < 480;
-    const sliders = isMobile ? 2 : 4;
-    const perSlider = isMobile ? 5 : 3;
+    const numSliders = isMobile ? 2 : 4;
     const perSlide = isMobile ? 2 : 1;
+    
+    // Divide badges evenly across all sliders
+    const badgesPerSlider = Math.ceil(badges.length / numSliders);
 
-    for (let s = 0; s < sliders; s++) {
-        const start = s * perSlider;
-        const imgs = badges.slice(start, start + perSlider);
+    for (let s = 0; s < numSliders; s++) {
+        const start = s * badgesPerSlider;
+        const imgs = badges.slice(start, start + badgesPerSlider);
+        
+        // Skip if no badges for this slider
+        if (imgs.length === 0) continue;
 
         const wrapper = document.createElement("div");
         wrapper.className = "badge-slider-wrapper1";
@@ -623,7 +639,6 @@ function createSliders() {
 
     initSliders();
 }
-
 function initSliders() {
     const sliders = document.querySelectorAll(".badge-slider-track");
 
